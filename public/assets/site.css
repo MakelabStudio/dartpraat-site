@@ -199,6 +199,9 @@ footer .inner { border-top: 1px solid var(--line); padding-top: 22px; display: f
 footer .co { display: inline-flex; gap: 6px; align-items: center; }
 footer .co em { font-style: normal; font: 700 12px/1 var(--body); padding: 5px 7px; border-radius: 4px; background: var(--panel-2); color: var(--text); }
 footer .co em.b { background: var(--green-deep, #1f7a47); }
+footer .made { display: inline-flex; gap: 10px; align-items: center; color: var(--muted); text-decoration: none; }
+footer .made img { display: block; height: 12px; width: auto; opacity: .85; transition: opacity .15s; }
+footer .made:hover img, footer .made:focus-visible img { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

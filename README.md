@@ -37,7 +37,7 @@ bezoeker → public/index.php → cache/feed.json (+ youtube.json, thumbs/) → 
 1. Kopieer de repo, pas `public/site.json` aan: `site` (naam, url, beschrijving), `feed.url`, `youtube.channel_id`
    (leeg = geen YouTube), `theme` (kleuren), `nav`, `listen`, `stats` (tokens `{episodes}`, `{season}`,
    `{avg_duration}`), `hosts`, `guests.not_names` (woorden die geen naam zijn), `join.cards`, `social`, `contact`,
-   `sponsors` (`[{name, url, logo?}]`), `footer`.
+   `sponsors` (`[{name, url, logo?}]`), `footer` (`made: {label, name, logo, url}` of `credit`).
 2. Vervang `public/assets/img/` (logo.webp/png, fallback.webp 640×360, og.jpg 1200×630). Fonts staan lokaal in
    `public/assets/fonts/` (geen Google Fonts-verzoek, AVG).
 3. `npm test` en kijk lokaal: `PHP=php sh test/serve.sh` → http://127.0.0.1:8080/.

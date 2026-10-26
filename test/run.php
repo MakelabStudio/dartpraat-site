@@ -144,7 +144,11 @@ check('render: vaste gasten vooraan (Barneveld zonder aflevering in de feed → 
     && count(array_keys($names[1], 'Gian van Veen')) === 1 && count($names[1]) <= 12, json_encode($names[1], JSON_UNESCAPED_UNICODE));
 check('render: partner PremiumDartshop met lokaal logo', str_contains($html, 'href="https://premiumdartshop.nl/"')
     && str_contains($html, 'src="assets/img/partners/premiumdartshop.webp"'));
-check('render: footer Creation HQ, geen conceptbalk', str_contains($html, 'Website door Creation HQ')
+check('render: Doe mee zonder Challonge, met knop naar PremiumDartshop', !str_contains($html, 'challonge.com')
+    && substr_count($html, 'href="https://premiumdartshop.nl/"') >= 2);
+check('render: vaste gast Raymond van Barneveld bij eerdere gasten', str_contains($html, 'Raymond van Barneveld'));
+check('render: footer Made by Fannatic met logo en link, geen conceptbalk', str_contains($html, 'href="https://fannatic.shop/"')
+    && str_contains($html, 'src="assets/img/partners/fannatic.svg"')
     && !str_contains($html, 'Makelab') && !str_contains($html, 'class="concept'));
 preg_match('~<script type="application/ld\+json">(.*?)</script>~s', $html, $m);
 $ld = json_decode($m[1] ?? '', true);

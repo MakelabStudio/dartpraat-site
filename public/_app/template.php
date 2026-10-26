@@ -193,7 +193,11 @@ $ext = 'target="_blank" rel="noopener"';
 <footer class="gutter">
   <div class="inner">
     <span class="co"><?= e($s['footer']['tagline']) ?> · <?php foreach ($s['footer']['chips'] as $i => $chip): ?><em<?= $i === count($s['footer']['chips']) - 1 ? ' class="b"' : '' ?>><?= e($chip) ?></em><?php endforeach ?></span>
+<?php if (!empty($s['footer']['made'])): $m = $s['footer']['made']; ?>
+    <a class="made" href="<?= e($m['url']) ?>" <?= $ext ?>><span><?= e($m['label']) ?></span><img src="<?= e($m['logo']) ?>" alt="<?= e($m['name']) ?>" loading="lazy" width="104" height="12"></a>
+<?php elseif (!empty($s['footer']['credit'])): ?>
     <span><?= e($s['footer']['credit']) ?></span>
+<?php endif ?>
   </div>
 </footer>
 <div class="player" id="player" hidden><div class="inner"><span class="pt" id="player-title"></span><audio id="audio" controls preload="none"></audio><button class="copy" id="player-close" type="button" aria-label="Speler sluiten">Sluit</button></div></div>

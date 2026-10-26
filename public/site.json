@@ -79,7 +79,7 @@
     "em": "mee",
     "cards": [
       { "tag": "WK Darts · Scorito", "title": "Dartpraat-poule", "text": "Voorspel de WK-uitslagen tegen de andere luisteraars van Dartpraat.", "cta": "Doe mee", "url": "https://www.scorito.com/subleague/1005350/wk-darts-2026/dartpraat-podcast/1bf71993-3b34-4883-bb9c-344e4337e452" },
-      { "tag": "WK Darts · Challonge", "title": "WK-bracket", "text": "Het hele speelschema van het WK, ronde voor ronde.", "cta": "Bekijk het schema", "url": "https://challonge.com/nl/PDCwk26" },
+      { "tag": "Partner · Dartshop", "title": "PremiumDartshop", "text": "Darts, flights, shafts en accessoires bij de dartshop achter Dartpraat.", "cta": "Naar de shop", "url": "https://premiumdartshop.nl/" },
       { "style": "discord", "icon": "discord", "title": "Discord", "text": "Napraten over de aflevering en de wedstrijden van vanavond.", "cta": "Join de Discord", "url": "https://discord.gg/sfBd2WVgDR" }
     ]
   },
@@ -100,6 +100,6 @@
   "footer": {
     "tagline": "Game on",
     "chips": ["T20", "T20", "Bull"],
-    "credit": "Website door Creation HQ"
+    "made": { "label": "Made by", "name": "Fannatic", "logo": "assets/img/partners/fannatic.svg", "url": "https://fannatic.shop/" }
   }
 }
