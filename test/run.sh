@@ -1,6 +1,7 @@
 #!/bin/sh
 # Testsuite: php -l op alles, daarna test/run.php. Zoekt PHP in $PHP, dan `php` op PATH, anders een statische PHP 8.1
 # (static-php-cli) in ~/.cache/podsite-php (eenmalig downloaden; de server draait 8.1+).
+# Met een adres alleen de rooktest, alleen-lezen (GET) tegen die site, bv. na een uitrol:  sh test/run.sh https://dartpraat.nl
 set -e
 cd "$(dirname "$0")/.."
 if [ -z "$PHP" ]; then
@@ -14,6 +15,7 @@ if [ -z "$PHP" ]; then
   fi
 fi
 "$PHP" -r 'exit(PHP_VERSION_ID >= 80100 ? 0 : 1);' || { echo "PHP 8.1+ nodig"; exit 1; }
+case "$1" in http://*|https://*) exec "$PHP" test/smoke.php "$@" ;; esac
 n=0
 for f in $(find public test -name '*.php'); do "$PHP" -l "$f" >/dev/null || exit 1; n=$((n+1)); done
 echo "ok  php -l: $n bestanden ($("$PHP" -r 'echo PHP_VERSION;'))"
