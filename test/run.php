@@ -302,5 +302,9 @@ check('_app/ niet bereikbaar', $st === 404);
 $hits = file_exists("$feedDir/hits.log") ? file("$feedDir/hits.log", FILE_IGNORE_NEW_LINES) : [];
 check('thumbnails via de eigen server opgehaald, niet per bezoek', count(array_filter($hits, fn ($l) => str_starts_with($l, '/vi/'))) <= 10);
 
+// ---------------------------------------------------------------- 4. rooktest: alles laadt, geen dode links
+require __DIR__ . '/smoke.php';
+smoke("http://127.0.0.1:$sitePort", json_decode(file_get_contents($root . '/public/site.json'), true)['site']['url'], true, 'check');
+
 echo "\n$passes ok, $failures fout\n";
 exit($failures ? 1 : 0);
